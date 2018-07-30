@@ -35,7 +35,7 @@ public class BaseClass {
 	protected Sheet sheet;
 	public BaseClass() throws IOException, InvalidFormatException
 	{
-		reader=new FileReader("/Users/swetha/eclipse-workspace/Shopmatic/src/main/resources/config.properties");
+		reader=new FileReader("./src/main/resources/LoginConfig.properties");
 		properties=new Properties();
 		properties.load(reader);
 		browser = properties.getProperty("browser");
@@ -53,7 +53,7 @@ public class BaseClass {
 	@BeforeTest(alwaysRun = true)
 	public void setProperties() {
 		if(browser.contentEquals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/swetha/Documents/softwares/automation drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "./drivers/mac/chromedriver");
 			driver = new ChromeDriver();
 			
 		}
@@ -61,7 +61,7 @@ public class BaseClass {
 			driver= new SafariDriver();
 		}
 		else if(browser.contentEquals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "/Users/swetha/Documents/softwares/automation drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "./drivers/mac/geckodriver");
 			driver= new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
