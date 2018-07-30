@@ -49,7 +49,8 @@ public class Discounts {
 		driver.findElement(By.xpath(discountCode)).sendKeys(""+code);
 	}
 	
-	public void addFlatDiscountAmount(Float amt) {
+	public void addFlatDiscountAmount(String amt) {
+		driver.findElement(By.xpath(flatDiscountAmount)).clear();
 		driver.findElement(By.xpath(flatDiscountAmount)).sendKeys(""+amt);
 	}
 	public void addFlatDiscountPercentage(Float perc) {
