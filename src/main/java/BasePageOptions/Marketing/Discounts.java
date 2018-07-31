@@ -58,6 +58,7 @@ public class Discounts {
 	}
 	
 	public void addminOrderDiscount(Float amt) {
+		driver.findElement(By.xpath(minOrderDiscount)).clear();
 		driver.findElement(By.xpath(minOrderDiscount)).sendKeys(""+amt);
 	}
 	
