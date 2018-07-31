@@ -3,6 +3,7 @@ package Discounts;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass_Login;
@@ -45,6 +46,7 @@ public class AddFlatDiscountTest1 extends BaseClass_Login{
 		discounts.addDiscountEndDate("31 July 2018");
 		discounts.clickAddADiscountButton();
 		Thread.sleep(2000);
+		Assert.assertTrue(discounts.checkDiscountCreated().contentEquals("You have successfully created Discount"+" "+discountName+"."));
 		pageBuilderPage.clickDashboard();
 		pageBuilderPage.clickSignOut();
 		pageBuilderPage.clickConfirmSignOut();

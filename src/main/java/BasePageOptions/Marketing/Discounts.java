@@ -23,6 +23,11 @@ public class Discounts {
 	private String discountStartDate="//input[@name='discount[start_date]']";
 	private String discountEndDate="//input[@name='discount[end_date]']";
 	private String addDiscountButton="//input[@class='add-a-discount']";
+	private String successMessage = "//div[contains(@class,'alert-dismissable')]/div";
+	
+	public String checkDiscountCreated() {
+		return driver.findElement(By.xpath(successMessage)).getText();
+	}
 	
 	public void clickAddDiscount() {
 		driver.findElement(By.xpath(addDiscount)).click();
@@ -53,7 +58,8 @@ public class Discounts {
 		driver.findElement(By.xpath(flatDiscountAmount)).clear();
 		driver.findElement(By.xpath(flatDiscountAmount)).sendKeys(""+amt);
 	}
-	public void addFlatDiscountPercentage(Float perc) {
+	public void addFlatDiscountPercentage(String perc) {
+		driver.findElement(By.xpath(flatDiscountPercentage)).clear();
 		driver.findElement(By.xpath(flatDiscountPercentage)).sendKeys(""+perc);
 	}
 	
