@@ -106,7 +106,8 @@ public class SignUpWithBlankTemplateWithOfflinePaymentAndStdShippingInternationa
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
 		
-		ShippingOptionsPage shippingOptionsPage = new ShippingOptionsPage(driver);		
+		ShippingOptionsPage shippingOptionsPage = new ShippingOptionsPage(driver);
+		shippingOptionsPage.clickInternatioanlShippingTab();
 		shippingOptionsPage.clickStdShipping_International_SG();
 		shippingOptionsPage.clickConfirm();
 		Thread.sleep(5000);

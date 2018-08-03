@@ -83,6 +83,7 @@ public class SignUpWithBlankTemplateWithCOD extends BaseClass{
 		businessInfo.addBusinessStreet(firstName);
 	
 		businessInfo.addBusiness_Pincode(RandomStringUtils.randomNumeric(6));
+		Thread.sleep(1000);
 		businessInfo.clickBusinessFormAddressNextButton_sg();
 		Thread.sleep(10000);
 		
