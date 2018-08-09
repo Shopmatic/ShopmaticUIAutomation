@@ -52,7 +52,7 @@ public class Products {
 	private String height = "//input[@id='product_form_product_attributes_shipping_details_height']";
 	private String width = "//input[@id='product_form_product_attributes_shipping_details_width']";
 	private String totalWeight = "//input[@id='product_form_product_attributes_shipping_details_weight']";
-	private String inventorySKU="product_form_product_attributes_sku";
+	private String inventorySKU="//input[@id='product_form_product_attributes_sku']";
 	private String upc="//input[@id='product_form_product_attributes_upc_code']";
 	private String allow_purchase_oos="//label[@for='product_form_product_attributes_allow_oversell' and @class='switch-paddle float-right']";
 	private String show_prd_in_store="//label[@for='product_form_unpublishing' and @class='switch-paddle float-right']";
@@ -91,12 +91,12 @@ public class Products {
 
 	public void enableAllowPurchaseOOS() 
 	{
-		driver.findElement(By.xpath("allow_purchase_oos")).click();
+		driver.findElement(By.xpath(allow_purchase_oos)).click();
 	}
 	
-	public void showPrdInStore() 
+	public void enableShowPrdInStore() 
 	{
-		driver.findElement(By.xpath("show_prd_in_store")).click();
+		driver.findElement(By.xpath(show_prd_in_store)).click();
 	}
 	
 	public void clickCancel() {
@@ -104,7 +104,7 @@ public class Products {
 	}
 	
 	public void clickMoreSettings() {
-		driver.findElement(By.xpath(more_settings));
+		driver.findElement(By.xpath(more_settings)).click();
 	}
 	
 	public Boolean isProductPresent(String prod_name) {
