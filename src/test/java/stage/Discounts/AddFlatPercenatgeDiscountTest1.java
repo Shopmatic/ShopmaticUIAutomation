@@ -1,4 +1,4 @@
-package Discounts;
+package stage.Discounts;
 
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ import BasePageOptions.Marketing.Discounts;
 import Login.LoginPage;
 import PageBuilder.PageBuilderPage;
 
-public class AddFlatPercentageDiscountTest2 extends BaseClass_Login{
+public class AddFlatPercenatgeDiscountTest1 extends BaseClass_Login{
 	
-	String discountName="offer15";
+	String discountName="offer4";
 	String discount="30.5";
 
-	public AddFlatPercentageDiscountTest2() throws IOException, InvalidFormatException {
+	public AddFlatPercenatgeDiscountTest1() throws IOException, InvalidFormatException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -40,10 +40,9 @@ public class AddFlatPercentageDiscountTest2 extends BaseClass_Login{
 		Discounts discounts = new Discounts(driver);
 		discounts.clickAddDiscount();
 		discounts.addDiscountName(discountName);
-		discounts.addDiscountCode("JulyClearanceSale15");
+		discounts.addDiscountCode("PercClearanceSale1");
 		discounts.clickradioButtonPercentageDiscount();
 		discounts.addFlatDiscountPercentage(discount);
-		discounts.addminOrderDiscount((float) 300.0);
 		discounts.addDiscountStartDate("30 July 2018");
 		discounts.addDiscountEndDate("31 July 2018");
 		discounts.clickAddADiscountButton();

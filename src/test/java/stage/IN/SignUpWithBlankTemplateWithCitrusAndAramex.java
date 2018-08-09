@@ -29,6 +29,7 @@ import BaseClass.BaseClass;
 import BaseClass.Navigation;
 import BasePageOptions.Products;
 import PageBuilder.DomainNamePage;
+import PageBuilder.PageBuilderPage;
 import PageBuilder.PaymentOptionsPage;
 import PageBuilder.ReadyToPublishPage;
 import PageBuilder.ShippingOptionsPage;
@@ -142,6 +143,8 @@ public class SignUpWithBlankTemplateWithCitrusAndAramex extends BaseClass{
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
+		 Thread.sleep(2000);
+		
 	    	
 	}
 

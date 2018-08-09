@@ -1,4 +1,4 @@
-package Discounts;
+package stage.Discounts;
 
 import java.io.IOException;
 

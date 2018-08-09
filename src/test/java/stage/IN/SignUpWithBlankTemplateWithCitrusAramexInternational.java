@@ -138,8 +138,6 @@ public class SignUpWithBlankTemplateWithCitrusAramexInternational extends BaseCl
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Navigation.clickNext(driver);
-		Thread.sleep(10000);
 		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);

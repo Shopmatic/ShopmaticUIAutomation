@@ -117,6 +117,7 @@ public class SignUpWithBlankTemplateWithCitrusCODOfflinePaymentAllShippingOption
 	    citrusPage.clickSave();
 	    Thread.sleep(5000);
 	    paymentOptionsPage.addOfflineInstructionForDomesticPayment("efuywetfywe");
+	    Thread.sleep(2000);
 		paymentOptionsPage.clickSaveAndEnablePayment_Domestic();
 		Thread.sleep(5000);
 		Navigation.clickNext(driver);

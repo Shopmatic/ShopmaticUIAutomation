@@ -1,4 +1,4 @@
-package Discounts;
+package stage.Discounts;
 
 import java.io.IOException;
 
@@ -11,19 +11,19 @@ import BasePageOptions.Marketing.Discounts;
 import Login.LoginPage;
 import PageBuilder.PageBuilderPage;
 
-public class AddFlatFreeShippingDiscountTest1 extends BaseClass_Login{
+public class AddFlatDiscountTest1 extends BaseClass_Login{
 	
-	String discountName="offer16";
+	String discountName="offer4";
 	String discount="30.5";
 
-	public AddFlatFreeShippingDiscountTest1() throws IOException, InvalidFormatException {
+	public AddFlatDiscountTest1() throws IOException, InvalidFormatException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Test
 	public void addFlatDiscount() throws InterruptedException {
-		
+		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
 		loginPage.addEmail(email);
 		loginPage.addPassword(password);
@@ -40,9 +40,8 @@ public class AddFlatFreeShippingDiscountTest1 extends BaseClass_Login{
 		Discounts discounts = new Discounts(driver);
 		discounts.clickAddDiscount();
 		discounts.addDiscountName(discountName);
-		discounts.addDiscountCode("JulyClearanceSale16");
-		discounts.clickradioButtonFreeShippingDiscount();
-		discounts.addminOrderDiscount((float) 300.0);
+		discounts.addDiscountCode("JulyClearanceSale2");
+		discounts.addFlatDiscountAmount(discount);
 		discounts.addDiscountStartDate("30 July 2018");
 		discounts.addDiscountEndDate("31 July 2018");
 		discounts.clickAddADiscountButton();

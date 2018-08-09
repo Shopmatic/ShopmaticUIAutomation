@@ -123,15 +123,7 @@ public class SignUpWithBlankTemplateWithCitrus extends BaseClass{
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
-		 Thread.sleep(5000);
-		driver.switchTo().window(tabs.get(1));
-	    driver.close();
-	    driver.switchTo().window(tabs.get(0));
-	    
-	    PageBuilderPage pageBuilder = new PageBuilderPage(driver);
-	    pageBuilder.clickDashboard();
-	    pageBuilder.clickSignOut();
-	    Thread.sleep(2000);   	
+		  	
 	}
 
 }
