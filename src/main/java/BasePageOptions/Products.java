@@ -1,5 +1,7 @@
 package BasePageOptions;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -42,9 +44,22 @@ public class Products {
 	private String selectCategory="//a[@data-action='show']/span[@class='title' and text()='";
 	
 	private String add_subcategory="//span[@class='title' and text()='";
+	private String list_of_products="//a[contains(@href,'/products/')]/div/div[2]/h1[text()]";
 	
 	
 	WebElement element;
+	
+	public Boolean isProductPresent(String prod_name) {
+		List<WebElement> plist = driver.findElements(By.xpath(list_of_products));
+		for(int i=0; i<plist.size();i++)
+		{
+			System.out.println(plist.get(i).toString());
+			if(plist.get(i).toString().contentEquals(prod_name)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public void addSubCategory(String option) {
 		driver.findElement(By.xpath(add_subcategory+option+"']/parent::a/following-sibling::ul")).click();

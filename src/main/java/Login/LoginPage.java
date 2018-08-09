@@ -18,6 +18,30 @@ public class LoginPage {
     private String forgotPasswordLink="//a[contains(@href,'password_resets')]";
     private String loginViaFaceBookButton = "//a[@class='facebook_login']";
     private String loginViaGoogleButton = "//a[@class='google_login']";
+    private String env_passcode="//input[@id='env_passcode']";
+    private String login_shoptiq="//button[contains(@name,'Login')]";
+    
+    
+    //shoptiq
+    private String manage_your_store="//button[contains(text(),'Manage')]";
+    private String view_your_store="//button[contains(text(),'View')]";
+    
+    
+    public void clickManageYourStore() {
+    	driver.findElement(By.xpath(manage_your_store)).click();
+    }
+    
+    public void clickViewYourStore() {
+    	driver.findElement(By.xpath(view_your_store)).click();
+    }
+    
+    public void loginShoptiq() {
+    	driver.findElement(By.xpath(login_shoptiq)).click();
+    }
+    
+    public void addEnvPassCode() {
+  		driver.findElement(By.xpath(env_passcode)).sendKeys("tempura");
+  	}
 
     public void addEmail(String email_address) {
     	driver.findElement(By.xpath(email)).sendKeys(email_address);
