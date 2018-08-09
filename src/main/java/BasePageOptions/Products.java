@@ -25,7 +25,6 @@ public class Products {
 	private String productBasicInfo="//a[text()='Basic info']";
 	private String productOptions="//span[text()='Product options']";
 	private String productTaxes="//a[text()='Taxes']";
-	private String productMoreSettings="//span[text()='More settings']";
 
 	private String productDescription="//textarea[@name='product_form[product_attributes][description]']";
 	private String sellingPrice="//input[@id='product_form_product_attributes_price']";
@@ -47,7 +46,66 @@ public class Products {
 	private String list_of_products="//ul[@class='product-list']/li/div[@class='product-info']/span[@class='product-name']";
 	
 	
+	//Shipping details
+	private String more_settings="//span[text()='More settings']";
+	private String length="//input[@id='product_form_product_attributes_shipping_details_length']";
+	private String height = "//input[@id='product_form_product_attributes_shipping_details_height']";
+	private String width = "//input[@id='product_form_product_attributes_shipping_details_width']";
+	private String totalWeight = "//input[@id='product_form_product_attributes_shipping_details_weight']";
+	private String inventorySKU="product_form_product_attributes_sku";
+	private String upc="//input[@id='product_form_product_attributes_upc_code']";
+	private String allow_purchase_oos="//label[@for='product_form_product_attributes_allow_oversell' and @class='switch-paddle float-right']";
+	private String show_prd_in_store="//label[@for='product_form_unpublishing' and @class='switch-paddle float-right']";
+	
 	WebElement element;
+	
+	public void addLength(String dim) 
+	{
+		driver.findElement(By.xpath(length)).sendKeys(""+dim);
+	}
+	
+	public void addHeight(String dim) 
+	{
+		driver.findElement(By.xpath(height)).sendKeys(""+dim);
+	}
+
+	public void addWidth(String dim) 
+	{
+		driver.findElement(By.xpath(width)).sendKeys(""+dim);
+	}
+
+	public void addTotalWeight(String dim) 
+	{
+		driver.findElement(By.xpath(totalWeight)).sendKeys(""+dim);
+	}
+
+	public void addInventorySKU(String sku) 
+	{
+		driver.findElement(By.xpath(inventorySKU)).sendKeys(""+sku);
+	}
+
+	public void addUpc(String dim) 
+	{
+		driver.findElement(By.xpath(upc)).sendKeys(""+dim);
+	}
+
+	public void enableAllowPurchaseOOS() 
+	{
+		driver.findElement(By.xpath("allow_purchase_oos")).click();
+	}
+	
+	public void showPrdInStore() 
+	{
+		driver.findElement(By.xpath("show_prd_in_store")).click();
+	}
+	
+	public void clickCancel() {
+		driver.findElement(By.xpath(cancelProduct));
+	}
+	
+	public void clickMoreSettings() {
+		driver.findElement(By.xpath(more_settings));
+	}
 	
 	public Boolean isProductPresent(String prod_name) {
 		ArrayList<String> plist = new  ArrayList<String>();
@@ -60,6 +118,17 @@ public class Products {
 			}
 		}
 		return false;
+	}
+	
+	public ArrayList<String> listOfProducts() {
+		ArrayList<String> plist = new  ArrayList<String>();
+		int size = driver.findElements(By.xpath(list_of_products)).size();
+		for(int i=0; i<size;i++)
+		{
+			plist.add(driver.findElements(By.xpath(list_of_products)).get(i).getText());
+			
+		}
+		return plist;
 	}
 	
 	public void addSubCategory(String option) {
