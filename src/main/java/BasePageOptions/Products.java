@@ -45,6 +45,9 @@ public class Products {
 	private String add_subcategory="//span[@class='title' and text()='";
 	private String list_of_products="//ul[@class='product-list']/li/div[@class='product-info']/span[@class='product-name']";
 	
+	//Taxes
+	private String gst_in="//input[@id='product_form_product_attributes_taxes_applicable_sales']";
+	private String taxes_tab="//a[@href='#product_form_tab3_new']";
 	
 	//Shipping details
 	private String more_settings="//span[text()='More settings']";
@@ -58,6 +61,16 @@ public class Products {
 	private String show_prd_in_store="//label[@for='product_form_unpublishing' and @class='switch-paddle float-right']";
 	
 	WebElement element;
+	
+	public void addGST_IN(String tax) 
+	{
+		driver.findElement(By.xpath(gst_in)).sendKeys(""+tax);
+	}
+	
+	public void clickTaxes() 
+	{
+		driver.findElement(By.xpath(taxes_tab)).click();
+	}
 	
 	public void addLength(String dim) 
 	{
