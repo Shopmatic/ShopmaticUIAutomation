@@ -13,6 +13,11 @@ public class Taxes {
 	private String gst_rate="//input[@id='gstRate']";
 	private String gst_Num="//input[@id='gstNumber']";
 	private String save_changes_button="//button[contains(text(),'Save')]";
+	private String msg_bar="//p[@class='message']";
+	
+	public String getMessage() {
+		return driver.findElement(By.xpath(msg_bar)).getText();
+	}
 	
 	public void addGstNum(String num) {
 		driver.findElement(By.xpath(gst_Num)).sendKeys(""+num);
@@ -54,22 +59,22 @@ public class Taxes {
 	}
 	
 	
-	//HK
-	private String hk_vat_checkbox="//input[@id='tax_option_charge_vat']/parent::div[contains(@class,'checkbox')]";
+	//HK and NI
+	private String vat_checkbox="//input[@id='tax_option_charge_vat']/parent::div[contains(@class,'checkbox')]";
 	private String vat_rate="//input[@id='vatRate']";
-	private String hk_show_vat_num="//input[@id='tax_option_show_vat_number']/parent::div[contains(@class,'checkbox')]";
-	private String hk_vat_number="//input[@id='vatNumber']";
+	private String show_vat_num="//input[@id='tax_option_show_vat_number']/parent::div[contains(@class,'checkbox')]";
+	private String vat_number="//input[@id='vatNumber']";
 	
 	public void clickVATCheckbox() {
-		driver.findElement(By.xpath(hk_vat_checkbox)).click();
+		driver.findElement(By.xpath(vat_checkbox)).click();
 	}
 	
 	public void showVatNumCheckbox() {
-		driver.findElement(By.xpath(hk_show_vat_num)).click();
+		driver.findElement(By.xpath(show_vat_num)).click();
 	}
 	
 	public void addVatNum(String num) {
-		driver.findElement(By.xpath(hk_vat_number)).sendKeys(""+num);
+		driver.findElement(By.xpath(vat_number)).sendKeys(""+num);
 	}
 	
 	public void addVatRate(String rate) {
