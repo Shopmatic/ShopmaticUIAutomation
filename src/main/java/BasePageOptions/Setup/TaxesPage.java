@@ -3,8 +3,8 @@ package BasePageOptions.Setup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Taxes {
-	public Taxes(WebDriver driver) {
+public class TaxesPage {
+	public TaxesPage(WebDriver driver) {
 		super();
 		this.driver = driver;
 	}
@@ -79,6 +79,10 @@ public class Taxes {
 	
 	public void addVatRate(String rate) {
 		driver.findElement(By.xpath(vat_rate)).sendKeys(""+rate);
+	}
+	
+	public void removeVatRate() {
+		driver.findElement(By.xpath(vat_rate)).clear();
 	}
 	
 }
