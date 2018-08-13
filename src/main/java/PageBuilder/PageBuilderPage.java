@@ -52,6 +52,9 @@ public class PageBuilderPage {
 	public void clickTrackings() {
 		driver.findElement(By.xpath("//a[@data-name='trackings']")).click();
 	}
+	public void clickShoppingChannels() {
+		driver.findElement(By.xpath("//a[@data-name='shopping']")).click();
+	}
 	
 	public void selectMarketing() {
 		WebElement element = driver.findElement(By.xpath("//a[@data-name='marketing']"));
