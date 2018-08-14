@@ -63,6 +63,17 @@ public class ProductShippingDetails {
 
 	}
 	
+	public void addDistrict(String s) throws InterruptedException {
+		driver.findElement(By.xpath("//div[contains(@id,'form_address_hash_district')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='s2id_autogen6_search']")).sendKeys(""+s);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='s2id_autogen6_search']")).sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='s2id_autogen6_search']")).sendKeys(Keys.ENTER);
+
+	}
+	
 	public void addCountry(String country_name) {
 		
 	}
@@ -154,6 +165,13 @@ public class ProductShippingDetails {
 	}
 	public void clickLoginHere() {
 		driver.findElement(By.xpath(login)).click();
+	}
+	
+	public String getOrderID() {
+		String id=driver.findElement(By.xpath("//div[@class='summary-title']/p")).getText();
+		id=id.replace("Order ID：", "");	
+		System.out.println("id: "+id);
+		return id;
 	}
 
 }

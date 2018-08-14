@@ -34,12 +34,49 @@ public class Orders {
 		driver.findElement(By.xpath(order_id_row+order_id+"']/parent::div/preceding-sibling::div")).click();
 	}
 	
-	public void selectActionsForOrder(String order_id, String action) {
-		Select dropdown= new Select(driver.findElement(By.xpath(actions_order_row+order_id+"']")));
-		dropdown.selectByVisibleText(action);
+	private String order_dropdown_1="//div[@class='rt-tr-group']/div/div[2]/a[text()='";
+	private String order_dropdown_2="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/span";
+	
+	public void selectActionsForOrder(String order_id) {		
+		driver.findElement(By.xpath(order_dropdown_1+order_id+order_dropdown_2)).click();
 	}
 	
-
+	private String cancel_order_1="//div[@class='rt-tr-group']/div/div[2]/a[text()='";
+	private String cancel_order_2="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/li[@class='actions-dropdown-post-link-item ' and text()='Cancel']";
+	
+	public void clickCancelOrder(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+cancel_order_2)).click();
+	}
+	
+	private String print_invoice="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/li/a[text()='Print invoice']";
+	
+	public void clickPrintInvoiceForOrder(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+print_invoice)).click();
+	}
+	
+	private String schedule_pickup="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/div/li[text()='Schedule pickup']";
+	
+	public void clickSchedulePickupForOrder(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+schedule_pickup)).click();
+	}
+	
+	private String mark_as_delivered="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/li[text()='Mark as delivered']";
+	
+	public void clickMarkAsDeliveredForOrder(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+mark_as_delivered)).click();
+	}
+	
+	private String refund="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/li/a[text()='Refund']";
+	
+	public void clickRefundForOrder(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+refund)).click();
+	}
+	
+	private String confirm_button="//button[@class='confirm-btn']";
+	
+	public void clickConfirm() {
+		driver.findElement(By.xpath(confirm_button)).click();
+	}
 
 	public void clickOrderNote() {
 		driver.findElement(By.xpath(allow_customer_order_note)).click();
@@ -71,6 +108,12 @@ public class Orders {
 	public void clickShippmentStatus_All() {
 		//List<String> orders_sections=
 				driver.findElement(By.xpath(shippment_status_All)).click();
+	}
+	
+	private String msg="//p[@class='message']";
+	
+	public String getMessage() {
+		return driver.findElement(By.xpath(msg)).getText();
 	}
 
 }
