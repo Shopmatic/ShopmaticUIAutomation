@@ -11,7 +11,7 @@ public class Seo {
 		this.driver=driver;
 	}
 	
-	private String titleAndMetaDescriptionForPages="//select[@name='page[id]']/option";
+	private String titleAndMetaDescriptionForPages="//select[@name='page[id]']";
 	private String titleAndMetaDescriptionForPageTitle="//input[@id='page_title']";
 	private String titleAndMetaDescriptionForPageDescription="//textarea[@id='page_description']";
 	private String saveTitleAndMetaDescriptionForPages="//input[@value='Save'][1]";
@@ -49,6 +49,10 @@ public class Seo {
 	public void addGoogleSiteVerificationNumber(String text) {
 		driver.findElement(By.xpath(addGoogleSiteVerificationNumber)).sendKeys(""+text);
 
+	}
+	
+	public String getMessage() {
+		return driver.findElement(By.xpath("//div[contains(@class,'alert-success')]/div")).getText();
 	}
 
 }
