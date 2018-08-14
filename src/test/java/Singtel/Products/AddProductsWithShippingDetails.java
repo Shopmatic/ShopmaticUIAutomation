@@ -45,6 +45,14 @@ public class AddProductsWithShippingDetails extends BaseClass_Login{
 		products.addProductDescription(productDesc);
 		products.addCategory(categoryName);
 		products.addTotalStockQty(qty);
+		
+		products.clickMoreSettings();
+		Thread.sleep(1000);
+		products.addLength("1");
+		products.addHeight("2");
+		products.addWidth("3");
+		products.addTotalWeight("10");
+		
 		products.clickSave();
 		Thread.sleep(2000);
 		Assert.assertTrue(products.isProductPresent(productName), "Product is not present in the list");
