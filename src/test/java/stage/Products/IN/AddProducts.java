@@ -1,4 +1,4 @@
-package Products.IN;
+package stage.Products.IN;
 
 import java.io.IOException;
 
