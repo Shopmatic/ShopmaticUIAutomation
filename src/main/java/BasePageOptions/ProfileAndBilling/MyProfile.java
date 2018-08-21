@@ -40,5 +40,15 @@ public class MyProfile {
 	public void addNotificationEmail(String email) {
 		driver.findElement(By.id("notificationEmail")).sendKeys(""+email);
 	}
+	
+	private String save_btn="//div[@id='profile']/div/button[text()='Save']";
+	private String cancel_btn="//div[@id='profile']/div/button[text()='Cancel']";
 
+	public void clickSave() {
+		driver.findElement(By.xpath(save_btn)).click();
+	}
+	
+	public void clickCancel() {
+		driver.findElement(By.xpath(cancel_btn)).click();
+	}
 }
