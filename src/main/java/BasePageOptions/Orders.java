@@ -83,30 +83,30 @@ public class Orders {
 	}
 	
 	public void clickOrderTabs_AllOrders() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(order_tab_allorders)).click();
 	}
 	
 	public void clickOrderTabs_DomesticOrders() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(order_tab_domesticorders)).click();
 	}
 	
 	public void clickOrderTabs_InternationalOrders() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(order_tab_internationalorders)).click();
 	}
 	
 	public void clickShippmentStatus_AwaitingPickUp() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(shippment_status_AwaitingPickup)).click();
 	}
 	public void clickShippmentStatus_Unshipped() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(shippment_status_Unshipped)).click();
 	}
 	public void clickShippmentStatus_All() {
-		//List<String> orders_sections=
+		
 				driver.findElement(By.xpath(shippment_status_All)).click();
 	}
 	
@@ -115,5 +115,10 @@ public class Orders {
 	public String getMessage() {
 		return driver.findElement(By.xpath(msg)).getText();
 	}
+	
+	private String shipViaShipyaari="']/parent::div/following-sibling::div[7]/div[@class='order-actions-dropdown']/div/div/div/ul/div/li[text()='Schedule pickup via Shipyaari']";
 
+	public void clickShipViaShipyaari(String order_id) {
+		driver.findElement(By.xpath(cancel_order_1+order_id+shipViaShipyaari)).click();
+	}
 }
