@@ -117,10 +117,9 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 	public String cust_fname=RandomStringUtils.randomAlphabetic(6);
 	public String cust_lname=RandomStringUtils.randomAlphabetic(4);
 	public String cust_street=RandomStringUtils.randomAlphanumeric(20);
-	public String cust_city="Ranebennur Bazar";
-	public String cust_state="Karnataka";
+	
 	public String cust_pincode=RandomStringUtils.randomNumeric(6);
-	public String cust_phone=RandomStringUtils.randomNumeric(10);
+	public String cust_phone=RandomStringUtils.randomNumeric(8);
 	public String cust_email=RandomStringUtils.randomAlphanumeric(5)+"@"+RandomStringUtils.randomAlphabetic(5)+".com";
 	public void createOrder() throws InterruptedException {
 	    HomePage homePage=new HomePage(driver);
@@ -137,8 +136,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 	    productShippingDetails.addFirstName(cust_fname);
 	    productShippingDetails.addLastName(cust_lname);
 	    productShippingDetails.addStreetAddr(cust_street);
-	    productShippingDetails.addCity(cust_city);
-	    productShippingDetails.addState(cust_state);
+
 	    productShippingDetails.addPostCode(cust_pincode);
 	    productShippingDetails.addPhone(cust_phone);
 	    Thread.sleep(2000);
