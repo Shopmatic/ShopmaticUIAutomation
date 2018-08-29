@@ -17,11 +17,11 @@ public class NeoPage {
 	private String submitButton="//input[@type='submit']";
 	
 	public void clickMerchantId() {
-		driver.findElement(By.xpath(merchantId)).sendKeys("201804121000001");
+		driver.findElement(By.xpath(merchantId)).sendKeys("201702091000003");
 	}
 	
 	public void clickSecretKey() {
-		driver.findElement(By.xpath(secretKey)).sendKeys("/4dHhdyW5e5uKCBjMvcx79phrnfGirej/+HmormOSJo=");
+		driver.findElement(By.xpath(secretKey)).sendKeys("98dXHJAgcxAAadKods8EcuC9ZPbNVx5sCodfJWF0E1g=");
 	}
 	
 	public void clickSubmit() {
