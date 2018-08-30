@@ -17,6 +17,12 @@
     <version>6.14.2</version>
     <scope>test</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.levigo/gwt-awt -->
+<dependency>
+    <groupId>com.levigo</groupId>
+    <artifactId>gwt-awt</artifactId>
+    <version>0.0.1</version>
+</dependency>
  <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
