@@ -4,8 +4,8 @@ import TemplateActions.TemplateActions;
 
 public class FashionAccessoriesTemplate {
 	
-	private String fashion_accessories_template = "//div[contains(@data-name,'Jewellery - ')]";
-	
+	private String fashion_accessories_template = "//div[contains(@data-name,'Jewellery - 0";
+	private String temp="')]";
 TemplateActions templateactions;
 	
 	public FashionAccessoriesTemplate(WebDriver driver) {
@@ -15,12 +15,12 @@ TemplateActions templateactions;
 	
 	public void clickEditTemplate(int template_no) 
 	{
-		templateactions.clickEditTemplate(fashion_accessories_template, template_no);
+		templateactions.clickEditTemplate(fashion_accessories_template+template_no+temp);
 	}
 	
 	public void clickPreview(int template_no) 
 	{
-		templateactions.clickPreview(fashion_accessories_template, template_no);
+		templateactions.clickPreview(fashion_accessories_template+template_no+temp);
 	}
 
 }
