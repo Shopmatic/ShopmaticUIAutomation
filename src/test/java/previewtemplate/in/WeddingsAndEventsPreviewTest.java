@@ -15,15 +15,15 @@ import org.testng.log4testng.Logger;
 
 import BaseClass.BaseClass_Login;
 import SignUp.SignUp;
-import TemplateCategories.BeautyAndWellnessTemplate;
+import TemplateCategories.WeddingsAndEventsTemplate;
 import imageprocessing.ImageCompareUtils;
 
-public class BeautyAndWellnessPreviewTest extends BaseClass_Login{
+public class WeddingsAndEventsPreviewTest extends BaseClass_Login{
 	
 	File dstFile,srcFile;
-	Logger logger = Logger.getLogger(BeautyAndWellnessPreviewTest.class);
-	String templateName="BeautyAndWellnessTemplate";
-	public BeautyAndWellnessPreviewTest() throws IOException, InvalidFormatException {
+	Logger logger = Logger.getLogger(WeddingsAndEventsPreviewTest.class);
+	String templateName="WeddingsAndEventsTemplate";
+	public WeddingsAndEventsPreviewTest() throws IOException, InvalidFormatException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -41,7 +41,7 @@ public class BeautyAndWellnessPreviewTest extends BaseClass_Login{
 
 	private void previewTemplate(String template) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
-		BeautyAndWellnessTemplate b =new BeautyAndWellnessTemplate(driver);
+		WeddingsAndEventsTemplate b =new WeddingsAndEventsTemplate(driver);
 		b.clickCategory();
 		Thread.sleep(5000);
 		b.clickPreview(1);
