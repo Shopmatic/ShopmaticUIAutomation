@@ -9,6 +9,8 @@ public class TemplateActions {
 	
 	private String editTemplate="//a[@class='button start-editing']";
 	private String previewTemplate = "//a[@class='button preview']";
+	private String previewTemplate1 = "/div/a[@class='button preview']";
+	
 	WebElement editTemplateElement,previewTemplateElement,templateHover;
 	Actions action;
 	
@@ -24,13 +26,11 @@ public class TemplateActions {
 		return driver.findElement(By.xpath(editTemplate));
 	}
 	
-	public WebElement clickPreviewElement() {
-		return driver.findElement(By.xpath(previewTemplate));
+	public WebElement clickPreviewElement(String element) {
+		return driver.findElement(By.xpath(element+previewTemplate1));
 	}
 	
-	public WebElement hoverOnBlankTemplateElement(String template, int number) {
-		return driver.findElement(By.xpath(template));
-	}
+	
 	
 	public WebElement hoverOnBlankTemplateElement(String template) {
 		return driver.findElement(By.xpath(template));
@@ -42,18 +42,10 @@ public class TemplateActions {
 	}
 	
 	public void clickPreview(String element) {
-		action.moveToElement(hoverOnBlankTemplateElement(element)).click(clickPreviewElement()).build().perform();
+		action.moveToElement(hoverOnBlankTemplateElement(element)).click(clickPreviewElement(element)).build().perform();
 
 	}
 	
-	public void clickEditTemplate(String element, int num) 
-	{
-		action.moveToElement(hoverOnBlankTemplateElement(element,num)).click(clickEditTemplateElement()).build().perform();
-	}
 	
-	public void clickPreview(String element, int num) {
-		action.moveToElement(hoverOnBlankTemplateElement(element,num)).click(clickPreviewElement()).build().perform();
-
-	}
 
 }
