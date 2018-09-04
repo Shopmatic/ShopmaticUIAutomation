@@ -20,5 +20,9 @@ public class LayoutPreview {
 	public void clickEditThisLayout() {
 		driver.findElement(By.xpath(edit_this_layout)).click();
 	}
+	
+	public String layoutHeader() {
+		return driver.findElement(By.xpath("//h1")).getText();
+	}
 
 }
