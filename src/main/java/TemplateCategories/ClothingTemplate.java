@@ -5,7 +5,7 @@ import TemplateActions.TemplateActions;
 
 public class ClothingTemplate {
 	
-	public String clothing_template = "//div[contains(@data-name,'Clothing - ')]";
+	public String clothing_template = "//div[contains(@data-name,'Clothing - 0";
 	TemplateActions templateactions;
 	private String temp="')]";
 	WebDriver driver;
