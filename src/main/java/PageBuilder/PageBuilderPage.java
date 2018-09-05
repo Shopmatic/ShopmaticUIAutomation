@@ -148,7 +148,7 @@ public class PageBuilderPage {
 	}
 	
 	public void clickEditSite() {
-		driver.findElement(By.xpath(customization_dropdown_List_Button)).click();;
+		driver.findElement(By.xpath("//a[@data-name='edit-pages']")).click();
 	}
 	
 	public void clickEditHomeOnTopBar() {

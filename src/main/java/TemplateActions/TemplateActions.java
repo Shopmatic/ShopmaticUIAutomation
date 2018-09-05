@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class TemplateActions {
 	
-	private String editTemplate="//a[@class='button start-editing']";
+	private String editTemplate="/div/a[@class='button start-editing']";
 	private String previewTemplate = "//a[@class='button preview']";
 	private String previewTemplate1 = "/div/a[@class='button preview']";
 	
@@ -22,8 +22,8 @@ public class TemplateActions {
 	}
 	
 	
-	public WebElement clickEditTemplateElement() {
-		return driver.findElement(By.xpath(editTemplate));
+	public WebElement clickEditTemplateElement(String element) {
+		return driver.findElement(By.xpath(element+editTemplate));
 	}
 	
 	public WebElement clickPreviewElement(String element) {
@@ -38,7 +38,7 @@ public class TemplateActions {
 	
 	public void clickEditTemplate(String element) 
 	{
-		action.moveToElement(hoverOnBlankTemplateElement(element)).click(clickEditTemplateElement()).build().perform();
+		action.moveToElement(hoverOnBlankTemplateElement(element)).click(clickEditTemplateElement(element)).build().perform();
 	}
 	
 	public void clickPreview(String element) {
