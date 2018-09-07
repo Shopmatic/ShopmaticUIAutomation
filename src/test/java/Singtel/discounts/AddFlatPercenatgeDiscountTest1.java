@@ -34,6 +34,7 @@ public class AddFlatPercenatgeDiscountTest1 extends BaseClass_Login{
 		Thread.sleep(2000);
 		pageBuilderPage.clickDashboard();
 		pageBuilderPage.selectMarketing();
+		Thread.sleep(2000);
 		pageBuilderPage.clickDiscounts();
 		
 		Discounts discounts = new Discounts(driver);

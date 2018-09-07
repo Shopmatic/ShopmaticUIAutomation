@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import BaseClass.BaseClass_Login;
 import BasePageOptions.Marketing.Discounts;
-import Login.LoginPage;
 import Login.SingtelLogin;
 import PageBuilder.PageBuilderPage;
 
