@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import BaseClass.BaseClass_Login;
 import BasePageOptions.Products;
 import Login.LoginPage;
-import Login.SingtelLogin;
 import PageBuilder.PageBuilderPage;
 
 public class AddProductsWithShippingDetailsAndInventory extends BaseClass_Login{

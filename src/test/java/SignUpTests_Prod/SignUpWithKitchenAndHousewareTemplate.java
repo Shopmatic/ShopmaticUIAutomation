@@ -21,9 +21,6 @@ import java.util.ArrayList;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import BaseClass.BaseClass;
 import BaseClass.Navigation;
 import BasePageOptions.Products;

@@ -23,7 +23,7 @@ import PageBuilder.Shipping.Shipyaari;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
+import TemplateCategories.AllTemplate;
 import Website.HomePage;
 import Website.ProductShippingDetails;
 import Website.WebPayments;
@@ -78,8 +78,9 @@ public class CreateOrdersAndScheduletoShipViaShipyaari extends BaseClass_Login{
 		SignUp s = new SignUp(driver);
 		s.clickSignUpGetStarted();
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");

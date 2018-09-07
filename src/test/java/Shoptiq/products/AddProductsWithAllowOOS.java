@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import BaseClass.BaseClass_Login;
 import BasePageOptions.Products;
 import Login.LoginPage;
-import Login.SingtelLogin;
 import PageBuilder.PageBuilderPage;
 
 public class AddProductsWithAllowOOS extends BaseClass_Login{
@@ -31,7 +30,7 @@ public class AddProductsWithAllowOOS extends BaseClass_Login{
 	public void testAddProduct() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_swe@testshop.com");
+		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
 		loginPage.addPassword("Tester123");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);

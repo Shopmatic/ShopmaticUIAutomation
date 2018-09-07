@@ -6,22 +6,12 @@ import java.util.ArrayList;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
-import BaseClass.Navigation;
-import BasePageOptions.Products;
 import BasePageOptions.Setup.TaxesPage;
 import Login.LoginPage;
-import PageBuilder.DomainNamePage;
 import PageBuilder.PageBuilderPage;
-import PageBuilder.PaymentOptionsPage;
-import PageBuilder.ReadyToPublishPage;
-import SignUp.BusinessInfo;
-import SignUp.SignUp;
-import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
 
 public class EnableshowTaxRefNumWithVATNumberForSG extends BaseClass{
 	
@@ -40,7 +30,7 @@ public class EnableshowTaxRefNumWithVATNumberForSG extends BaseClass{
 	public void enableGST() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_swe@testshop.com");
+		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
 		loginPage.addPassword("Tester123");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);

@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import BaseClass.BaseClass_Login;
 import BaseClass.Navigation;
-import BasePageOptions.Orders;
 import BasePageOptions.Products;
 import BasePageOptions.Marketing.ShoppingChannels;
 import PageBuilder.DomainNamePage;
@@ -21,10 +20,8 @@ import PageBuilder.ReadyToPublishPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
+import TemplateCategories.AllTemplate;
 import TemplateCategories.BlankTemplate;
-import Website.HomePage;
-import Website.ProductShippingDetails;
-import Website.WebPayments;
 
 public class EnableShoppingChannel extends BaseClass_Login{
 	
@@ -52,8 +49,9 @@ public class EnableShoppingChannel extends BaseClass_Login{
 		SignUp s = new SignUp(driver);
 		s.clickSignUpGetStarted();
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");

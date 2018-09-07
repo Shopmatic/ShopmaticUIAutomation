@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import BaseClass.BaseClass_Login;
 import BaseClass.Navigation;
-import BasePageOptions.Orders;
 import BasePageOptions.Products;
 import BasePageOptions.Marketing.ShoppingChannels;
 import PageBuilder.DomainNamePage;
@@ -22,9 +21,6 @@ import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
 import TemplateCategories.BlankTemplate;
-import Website.HomePage;
-import Website.ProductShippingDetails;
-import Website.WebPayments;
 
 public class EnableShoppingChannel extends BaseClass_Login{
 	

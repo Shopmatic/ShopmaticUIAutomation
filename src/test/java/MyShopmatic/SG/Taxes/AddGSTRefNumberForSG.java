@@ -19,7 +19,7 @@ import PageBuilder.ReadyToPublishPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
+import TemplateCategories.AllTemplate;
 
 public class AddGSTRefNumberForSG extends BaseClass{
 	
@@ -44,8 +44,9 @@ public class AddGSTRefNumberForSG extends BaseClass{
 		driver.navigate().to(currentUrl);
 		Thread.sleep(20000);
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		String email="testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com";

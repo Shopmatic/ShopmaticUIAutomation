@@ -23,7 +23,7 @@ public class shoptiqTest extends BaseClass{
 	public void testShoptiq() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_swe@testshop.com");
+		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
 		loginPage.addPassword("Tester123");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);

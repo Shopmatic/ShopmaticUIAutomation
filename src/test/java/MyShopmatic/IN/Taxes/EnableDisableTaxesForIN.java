@@ -19,7 +19,7 @@ import PageBuilder.ReadyToPublishPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
+import TemplateCategories.AllTemplate;
 
 public class EnableDisableTaxesForIN extends BaseClass{
 	
@@ -38,8 +38,9 @@ public class EnableDisableTaxesForIN extends BaseClass{
 		SignUp s = new SignUp(driver);
 		s.clickSignUpGetStarted();
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail(email);

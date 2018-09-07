@@ -1,29 +1,19 @@
 package stage.store.tests.in;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
-import PageBuilder.DomainNamePage;
-import PageBuilder.PageBuilderPage;
-import PageBuilder.PaymentOptionsPage;
+import BaseClass.BaseClass_Login;
+import BaseClass.Navigation;
 import PageBuilder.ReadyToPublishPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
-import Website.HomePage;
-import Website.ProductShippingDetails;
-import Website.WebPayments;
-import baseClass.BaseClass_Login;
-import baseClass.Navigation;
-import basePageOptions.Orders;
-import basePageOptions.Products;
+import TemplateCategories.EducationTemplate;
 
 public class CreateStoreTest1 extends BaseClass_Login{
 	
@@ -51,8 +41,12 @@ public class CreateStoreTest1 extends BaseClass_Login{
 		SignUp s = new SignUp(driver);
 		s.clickSignUpGetStarted();
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		EducationTemplate et = new EducationTemplate(driver);
+		
+		et.clickEditTemplate(2);
+		
+		/*BlankTemplate blankTemplate = new BlankTemplate(driver);
+		blankTemplate.clickEditTemplate();	*/	
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
@@ -79,7 +73,7 @@ public class CreateStoreTest1 extends BaseClass_Login{
 		businessInfo.clickBusinessFormAddressNextButton();
 		Thread.sleep(10000);
 		
-		Products products = new Products(driver);
+		/*Products products = new Products(driver);
 		products.clickProductsOption();
 		Thread.sleep(3000);
 		products.addProductsName(productName);
@@ -96,7 +90,7 @@ public class CreateStoreTest1 extends BaseClass_Login{
 		
 		PaymentOptionsPage paymentOptionsPage = new PaymentOptionsPage(driver);
 		paymentOptionsPage.enableCODPayment();
-	    Thread.sleep(10000);
+	    Thread.sleep(10000);*/
 	    
 	    Navigation.clickNext(driver);
 		Thread.sleep(10000);

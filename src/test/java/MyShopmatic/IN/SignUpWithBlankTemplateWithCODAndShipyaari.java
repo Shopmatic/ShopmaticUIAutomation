@@ -17,14 +17,9 @@ package MyShopmatic.IN;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import java.io.IOException;
-import java.util.ArrayList;
-
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import BaseClass.BaseClass;
 import BaseClass.Navigation;
 import BasePageOptions.Products;
@@ -33,11 +28,10 @@ import PageBuilder.PaymentOptionsPage;
 import PageBuilder.ReadyToPublishPage;
 import PageBuilder.ShippingOptionsPage;
 import PageBuilder.Shipping.Shipyaari;
-import PageBuilder.payments.CitrusPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
-import TemplateCategories.BlankTemplate;
+import TemplateCategories.AllTemplate;
 
 public class SignUpWithBlankTemplateWithCODAndShipyaari extends BaseClass{
 	
@@ -55,8 +49,9 @@ public class SignUpWithBlankTemplateWithCODAndShipyaari extends BaseClass{
 		SignUp s = new SignUp(driver);
 		s.clickSignUpGetStarted();
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
