@@ -10,7 +10,6 @@ public class PaymentOptionsPage {
 	WebDriver driver;
 	
 	private String next="//a[text()='Next']";
-	private String payment_options_list="//div[contains(@class,'option-lists')]/div/div[contains(@class,'option-list-base')]";
 	private String enable_payment_option="//button[text()='Enable']";
 	private String save_and_enable_payment_option_domestic="//div[@id='payment_options']/div[2]/div/div/div[4]/div/div[3]/div/div/button";
 	private String save_and_enable_payment_option_international="//div[@id='payment_options']/div[2]/div/div/div[7]/div/div[3]/div/div/button";
@@ -38,7 +37,7 @@ public class PaymentOptionsPage {
 
 	public PaymentOptionsPage(WebDriver driver) {
 		this.driver=driver;
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 	}
 	

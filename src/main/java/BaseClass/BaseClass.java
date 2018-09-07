@@ -1,13 +1,12 @@
 package BaseClass;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -48,6 +47,7 @@ public class BaseClass {
 			sheet = wb.getSheetAt(0);
 			
 		}*/
+		
 	}
 	
 	@BeforeTest(alwaysRun = true)
@@ -66,6 +66,7 @@ public class BaseClass {
 		}
 		driver.manage().window().maximize();
 		driver.navigate().to(baseurl);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	}
 	
 	@AfterTest(alwaysRun = true)

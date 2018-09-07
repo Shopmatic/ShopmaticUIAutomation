@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 public class TemplateActions {
 	
 	private String editTemplate="/div/a[@class='button start-editing']";
-	private String previewTemplate = "//a[@class='button preview']";
 	private String previewTemplate1 = "/div/a[@class='button preview']";
 	
 	WebElement editTemplateElement,previewTemplateElement,templateHover;

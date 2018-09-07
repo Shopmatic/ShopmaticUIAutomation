@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -16,8 +15,6 @@ public class ReadFromExcel {
 
 	private static XSSFCell Cell;
 
-	private static XSSFRow Row;
-	
 	public static Object[][] getTableArray(String FilePath, String SheetName) throws Exception {   
 		 
 		   String[][] tabArray = null;

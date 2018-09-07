@@ -76,8 +76,7 @@ public class ShippingOptionsPage {
 	
 	public ShippingOptionsPage(WebDriver driver) {
 		this.driver=driver;
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='title']']")));
+		new WebDriverWait(driver,30);
 	}
 	
 	public void clickNext() {

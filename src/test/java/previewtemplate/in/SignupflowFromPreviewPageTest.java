@@ -8,7 +8,6 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
@@ -26,7 +25,6 @@ import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
 import TemplateActions.LayoutPreview;
-import TemplateCategories.BeautyAndWellnessTemplate;
 import TemplateCategories.ClothingTemplate;
 import imageprocessing.ImageCompareUtils;
 
@@ -61,8 +59,7 @@ public class SignupflowFromPreviewPageTest extends BaseClass_Login{
 	
 	
 	private void signupAndOnboard() throws InterruptedException{
-		// TODO Auto-generated method stub
-		SignUp s = new SignUp(driver);
+		new SignUp(driver);
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");

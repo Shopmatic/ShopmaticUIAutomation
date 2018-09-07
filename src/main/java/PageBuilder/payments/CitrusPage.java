@@ -12,7 +12,7 @@ public class CitrusPage {
 	public CitrusPage(WebDriver driver) {
 		super();
 		this.driver = driver;
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		new WebDriverWait(driver, 30);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	

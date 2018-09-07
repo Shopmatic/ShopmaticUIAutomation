@@ -11,8 +11,6 @@ public class Chat {
 	}
 	
 	private String inputTextForChat="//div[@class='placeholder']";
-	private String saveInputTextForChat="//button[text()='Save']";
-	
 	public void addText(String text, int num) {
 		driver.findElement(By.xpath(""+inputTextForChat+"["+num+"]")).sendKeys(""+text);
 	}

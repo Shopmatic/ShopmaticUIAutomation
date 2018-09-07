@@ -1,11 +1,8 @@
 package Website;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class ProductShippingDetails {
@@ -74,7 +71,12 @@ public class ProductShippingDetails {
 
 	}
 	
-	public void addCountry(String country_name) {
+	public void addCountry(String country_name) throws InterruptedException{
+		driver.findElement(By.xpath(country)).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='s2id_autogen4_search']")).click();
+		driver.findElement(By.xpath("//input[@id='s2id_autogen4_search']")).sendKeys(""+country_name+"\n");
+		Thread.sleep(2000);
 		
 	}
 	
@@ -87,6 +89,19 @@ public class ProductShippingDetails {
 		driver.findElement(By.xpath("//input[@id='s2id_autogen5_search']")).sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='s2id_autogen5_search']")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li/div/span")).click();
+		Thread.sleep(1000);
+	}
+	public void addCity_ni(String city_name) throws InterruptedException {
+		driver.findElement(By.xpath(city)).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("ni_city_1")).click();
+		driver.findElement(By.xpath("ni_city_1")).sendKeys(""+city_name+"\n");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("ni_city_1")).sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("ni_city_1")).sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li/div/span")).click();
 		Thread.sleep(1000);

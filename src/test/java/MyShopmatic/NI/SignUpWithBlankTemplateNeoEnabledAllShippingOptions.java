@@ -25,7 +25,6 @@ import org.testng.Assert;
 import BaseClass.BaseClass;
 import BaseClass.Navigation;
 import BasePageOptions.Products;
-import BasePageOptions.Marketing.Discounts;
 import BasePageOptions.Setup.Store;
 import BasePageOptions.Setup.TaxesPage;
 import PageBuilder.DomainNamePage;

@@ -1,7 +1,6 @@
 package BasePageOptions;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -22,10 +21,6 @@ public class Products {
 	private String productsName="//input[@id='product_form_product_attributes_name']";
 	private String saveProduct="//div/a[@class='submit']";
 	private String cancelProduct="//div/a[@class='cancel']";
-	private String productBasicInfo="//a[text()='Basic info']";
-	private String productOptions="//span[text()='Product options']";
-	private String productTaxes="//a[text()='Taxes']";
-
 	private String productDescription="//textarea[@name='product_form[product_attributes][description]']";
 	private String sellingPrice="//input[@id='product_form_product_attributes_price']";
 	private String originalPrice="//input[@id='product_form_product_attributes_list_price']";

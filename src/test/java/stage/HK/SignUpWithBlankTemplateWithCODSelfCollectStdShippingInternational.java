@@ -31,7 +31,6 @@ import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
 import TemplateCategories.AllTemplate;
-import TemplateCategories.BlankTemplate;
 
 public class SignUpWithBlankTemplateWithCODSelfCollectStdShippingInternational extends BaseClass{
 	
