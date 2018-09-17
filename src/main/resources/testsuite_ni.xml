@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NIProd" parallel="false">
+	<test name="NI Test - Sanity">
+		<classes>
+			<class name="MyShopmatic.NI.SignUpWithBlankTemplateNeoEnabledAllShippingOptions" />
+		</classes>
+	</test>
+</suite>
