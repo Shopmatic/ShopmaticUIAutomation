@@ -1,5 +1,7 @@
 package stage.SG.seo;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -101,7 +103,7 @@ public class addSeoTest extends BaseClass_Login{
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		
@@ -125,7 +127,7 @@ public class addSeoTest extends BaseClass_Login{
 		seo.addTitleAndMetaDescriptionForPagesTitle("Title");
 		seo.clickSaveTitleAndMetaDescriptionForPages();
 		Thread.sleep(2000);
-		Assert.assertTrue(seo.getMessage().contentEquals("Title and description save successfully."));
+		AssertJUnit.assertTrue(seo.getMessage().contentEquals("Title and description save successfully."));
 	}
 
 }

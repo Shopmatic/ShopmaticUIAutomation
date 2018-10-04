@@ -1,5 +1,7 @@
 package Shoptiq.products;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -26,8 +28,8 @@ public class AddProducts extends BaseClass_Login{
 	public void testAddProductWithMinDetails() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_swe@testshop.com");
-		loginPage.addPassword("Tester123");	
+		loginPage.addEmail("shoptiqtesting@gmail.com");
+		loginPage.addPassword("7273fwFW");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);
 		loginPage.clickManageYourStore();

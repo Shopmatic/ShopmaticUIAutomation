@@ -1,5 +1,7 @@
 package stage.HK.Taxes;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -95,7 +97,7 @@ public class EnableshowTaxRefNumWithVATNumberForHK extends BaseClass{
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickAddMoreProducts();
@@ -112,7 +114,7 @@ public class EnableshowTaxRefNumWithVATNumberForHK extends BaseClass{
 		tax.addVatNum("VAT25634325");
 		tax.clickSaveChanges();
 		Thread.sleep(2000);
-		Assert.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
+		AssertJUnit.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
 	}
 	
 }

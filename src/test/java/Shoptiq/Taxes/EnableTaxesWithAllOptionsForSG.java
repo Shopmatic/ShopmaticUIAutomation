@@ -1,5 +1,7 @@
 package Shoptiq.Taxes;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -30,8 +32,8 @@ public class EnableTaxesWithAllOptionsForSG extends BaseClass{
 	public void enableGST() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
-		loginPage.addPassword("Tester123");	
+		loginPage.addEmail("shoptiqtesting@gmail.com");
+		loginPage.addPassword("7273fwFW");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);
 		loginPage.clickManageYourStore();
@@ -53,7 +55,7 @@ public class EnableTaxesWithAllOptionsForSG extends BaseClass{
 		tax.addGstNum("3jytvcjeruwey726");
 		tax.clickSaveChanges();
 		Thread.sleep(2000);
-		Assert.assertTrue(tax.getMessage().contains("The default VAT/Tax tax is successfully changed to "));
+		AssertJUnit.assertTrue(tax.getMessage().contains("The default VAT/Tax tax is successfully changed to "));
 	}
 	
 }

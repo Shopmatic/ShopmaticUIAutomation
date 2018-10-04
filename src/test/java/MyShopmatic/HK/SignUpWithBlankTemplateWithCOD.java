@@ -16,6 +16,8 @@ package MyShopmatic.HK;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -57,7 +59,9 @@ public class SignUpWithBlankTemplateWithCOD extends BaseClass{
 		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
-		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
+		String email="testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com";
+		signUpWindow.addEmail(email);
+		System.out.println(email);
 		signUpWindow.addPassword("Tester123*");
 		signUpWindow.addPhone("1111111111");
 		signUpWindow.clickSubmit();
@@ -100,7 +104,7 @@ public class SignUpWithBlankTemplateWithCOD extends BaseClass{
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();

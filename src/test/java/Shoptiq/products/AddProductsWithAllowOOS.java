@@ -1,8 +1,11 @@
 package Shoptiq.products;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +17,7 @@ import PageBuilder.PageBuilderPage;
 
 public class AddProductsWithAllowOOS extends BaseClass_Login{
 	
-	String productName="Product9";
+	String productName="Product-"+RandomStringUtils.random(3);
 	String sellingPrice="132.00";
 	String originalPrice="150";
 	String productDesc="productDesc";
@@ -30,8 +33,8 @@ public class AddProductsWithAllowOOS extends BaseClass_Login{
 	public void testAddProduct() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
-		loginPage.addPassword("Tester123");	
+		loginPage.addEmail("shoptiqtesting@gmail.com");
+		loginPage.addPassword("7273fwFW");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);
 		loginPage.clickManageYourStore();

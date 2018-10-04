@@ -1,5 +1,7 @@
 package MyShopmatic.SG.customers;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -61,7 +63,9 @@ public class CreateCustomerNotOptedInForMarketing extends BaseClass_Login{
 		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
-		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
+		String email="testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com";
+		System.out.println(email);
+		signUpWindow.addEmail(email);
 		signUpWindow.addPassword("Tester123*");
 		signUpWindow.addPhone("1111111111");
 		
@@ -108,7 +112,7 @@ public class CreateCustomerNotOptedInForMarketing extends BaseClass_Login{
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -137,8 +141,7 @@ public class CreateCustomerNotOptedInForMarketing extends BaseClass_Login{
 	    productShippingDetails.addFirstName(cust_fname);
 	    productShippingDetails.addLastName(cust_lname);
 	    productShippingDetails.addStreetAddr(cust_street);
-	    productShippingDetails.addCity(cust_city);
-	    productShippingDetails.addState(cust_state);
+	   
 	    productShippingDetails.addPostCode(cust_pincode);
 	    productShippingDetails.addPhone(cust_phone);
 	    Thread.sleep(2000);
@@ -169,7 +172,7 @@ public class CreateCustomerNotOptedInForMarketing extends BaseClass_Login{
 		
 		Customers cust=new Customers(driver);
 		cust.clickOptedMarketing();
-		Assert.assertTrue(cust.custListSize()==0);
+		AssertJUnit.assertTrue(cust.custListSize()==0);
 	}
 	
 

@@ -1,5 +1,7 @@
 package MyShopmatic.NI.Taxes;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -82,7 +84,7 @@ public class EnableshowTaxRefNumWithVATNumberForNI extends BaseClass{
 		domainNamePage.confirmDomainName();
 		Thread.sleep(3000);
 		
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickAddMoreProducts();
@@ -99,7 +101,7 @@ public class EnableshowTaxRefNumWithVATNumberForNI extends BaseClass{
 		tax.addVatNum("VAT25634325");
 		tax.clickSaveChanges();
 		Thread.sleep(2000);
-		Assert.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
+		AssertJUnit.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
 	}
 	
 }

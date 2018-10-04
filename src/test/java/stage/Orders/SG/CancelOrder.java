@@ -1,5 +1,7 @@
 package stage.Orders.SG;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -108,7 +110,7 @@ public class CancelOrder extends BaseClass_Login{
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -168,7 +170,7 @@ public class CancelOrder extends BaseClass_Login{
 		orders.clickCancelOrder(order_id);
 		orders.clickConfirm();
 		Thread.sleep(5000);
-		Assert.assertTrue(orders.getMessage().contentEquals("Order #"+order_id+" is cancelled"));
+		AssertJUnit.assertTrue(orders.getMessage().contentEquals("Order #"+order_id+" is cancelled"));
 	}
 	
 

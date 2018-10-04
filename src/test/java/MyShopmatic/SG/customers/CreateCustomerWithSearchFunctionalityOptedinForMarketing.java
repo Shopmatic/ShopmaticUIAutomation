@@ -1,5 +1,7 @@
 package MyShopmatic.SG.customers;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -31,7 +33,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 	String productSellingPrice="100.00";
 	String firstName=RandomStringUtils.randomAlphabetic(5), lastName=RandomStringUtils.randomAlphabetic(3);
 	String order_id="";
-
+	String email="testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com";
 	public CreateCustomerWithSearchFunctionalityOptedinForMarketing() throws IOException, InvalidFormatException {
 		super();
 		// TODO Auto-generated constructor stub
@@ -61,10 +63,10 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
-		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
+		signUpWindow.addEmail(email);
 		signUpWindow.addPassword("Tester123*");
 		signUpWindow.addPhone("1111111111");
-		
+		System.out.println("email: "+email.toLowerCase()+"\nPassword: Tester123*");
 		signUpWindow.clickSubmit();
 		Thread.sleep(5000);
 		AssertJUnit.assertEquals(Navigation.getTitle(driver), "Welcome to Shopmatic");
@@ -108,7 +110,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -171,7 +173,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		cust.searchCustomer(cust_email);
 		cust.clickSearchButton();
 		Thread.sleep(5000);
-		Assert.assertTrue(cust.custListSize() ==1);
+		AssertJUnit.assertTrue(cust.custListSize() ==1);
 		Assert.assertTrue(cust.findCustomer(cust_fname));
 	}
 	

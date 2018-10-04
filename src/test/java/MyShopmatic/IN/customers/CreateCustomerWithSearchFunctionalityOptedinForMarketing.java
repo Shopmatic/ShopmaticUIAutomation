@@ -1,5 +1,7 @@
 package MyShopmatic.IN.customers;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -56,10 +58,11 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
-		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
+		String email="testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com";
+		signUpWindow.addEmail(email);
 		signUpWindow.addPassword("Tester123*");
 		signUpWindow.addPhone("1111111111");
-		
+		System.out.println("Email: "+email.toLowerCase());
 		signUpWindow.clickSubmit();
 		Thread.sleep(5000);
 		AssertJUnit.assertEquals(Navigation.getTitle(driver), "Welcome to Shopmatic");
@@ -105,7 +108,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
 		
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -168,7 +171,7 @@ public class CreateCustomerWithSearchFunctionalityOptedinForMarketing extends Ba
 		cust.searchCustomer(cust_email);
 		cust.clickSearchButton();
 		Thread.sleep(5000);
-		Assert.assertTrue(cust.custListSize() ==1);
+		AssertJUnit.assertTrue(cust.custListSize() ==1);
 		Assert.assertTrue(cust.findCustomer(cust_fname));
 	}
 	

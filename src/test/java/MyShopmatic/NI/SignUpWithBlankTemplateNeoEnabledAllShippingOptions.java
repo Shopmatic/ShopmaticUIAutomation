@@ -16,6 +16,8 @@ package MyShopmatic.NI;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -115,7 +117,7 @@ public class SignUpWithBlankTemplateNeoEnabledAllShippingOptions extends BaseCla
 		domainNamePage.confirmDomainName();
 		Thread.sleep(3000);
 		
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -265,7 +267,7 @@ public class SignUpWithBlankTemplateNeoEnabledAllShippingOptions extends BaseCla
 		tax.addVatNum("VAT635456");
 		tax.clickSaveChanges();
 		Thread.sleep(3000);
-		Assert.assertTrue(tax.getMessage().contains("The default VAT/Tax tax is successfully changed to "));
+		AssertJUnit.assertTrue(tax.getMessage().contains("The default VAT/Tax tax is successfully changed to "));
 	}
 
 	private void addProducts() throws InterruptedException{

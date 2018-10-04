@@ -1,5 +1,7 @@
 package Singtel.Taxes;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -46,7 +48,7 @@ public class EnableshowTaxRefNumForSG extends BaseClass_Login{
 		tax.showGSTNumCheckbox();
 		tax.clickSaveChanges();
 		Thread.sleep(2000);
-		Assert.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
+		AssertJUnit.assertTrue(tax.getMessage().contentEquals("Your changes have been saved."));
 	}
 	
 }

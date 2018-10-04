@@ -16,6 +16,8 @@ package stage.HK;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -30,6 +32,7 @@ import PageBuilder.ShippingOptionsPage;
 import SignUp.BusinessInfo;
 import SignUp.SignUp;
 import SignUp.SignUpWindow;
+import TemplateCategories.AllTemplate;
 import TemplateCategories.BlankTemplate;
 
 public class SignUpWithBlankTemplateWithCODOfflinePaymentAndSelfCollectStdShippingInternational extends BaseClass{
@@ -53,8 +56,9 @@ public class SignUpWithBlankTemplateWithCODOfflinePaymentAndSelfCollectStdShippi
 		driver.navigate().to(currentUrl);
 		Thread.sleep(20000);
 		
-		BlankTemplate blankTemplate = new BlankTemplate(driver);
-		blankTemplate.clickEditTemplate();		
+		AllTemplate blankTemplate = new AllTemplate(driver);
+		Thread.sleep(3000);
+		blankTemplate.clickEditClothingTemplate(1);		
 		
 		SignUpWindow signUpWindow=new SignUpWindow(driver);
 		signUpWindow.addEmail("testshop_"+RandomStringUtils.randomAlphanumeric(5)+"@testshop.com");
@@ -114,7 +118,7 @@ public class SignUpWithBlankTemplateWithCODOfflinePaymentAndSelfCollectStdShippi
 		
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();

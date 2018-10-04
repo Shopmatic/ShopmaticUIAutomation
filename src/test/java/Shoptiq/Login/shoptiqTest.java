@@ -1,5 +1,6 @@
 package Shoptiq.Login;
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -23,8 +24,8 @@ public class shoptiqTest extends BaseClass{
 	public void testShoptiq() throws InterruptedException {
 		Thread.sleep(5000);
 		LoginPage loginPage =  new LoginPage(driver);
-		loginPage.addEmail("testshop_shoptiq_Aug242018@testshop.com");
-		loginPage.addPassword("Tester123");	
+		loginPage.addEmail("shoptiqtesting@gmail.com");
+		loginPage.addPassword("7273fwFW");	
 		loginPage.loginShoptiq();
 		Thread.sleep(5000);
 		loginPage.clickManageYourStore();

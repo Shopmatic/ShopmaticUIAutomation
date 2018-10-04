@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NIProd]">
+  <test thread-count="5" name="NI Test - Sanity(failed)">
+    <classes>
+      <class name="MyShopmatic.NI.SignUpWithBlankTemplateNeoEnabledAllShippingOptions">
+        <methods>
+          <include name="closeWindow"/>
+          <include name="setProperties"/>
+          <include name="takeScreenshot"/>
+          <include name="testMethod_stage"/>
+        </methods>
+      </class> <!-- MyShopmatic.NI.SignUpWithBlankTemplateNeoEnabledAllShippingOptions -->
+    </classes>
+  </test> <!-- NI Test - Sanity(failed) -->
+</suite> <!-- Failed suite [NIProd] -->

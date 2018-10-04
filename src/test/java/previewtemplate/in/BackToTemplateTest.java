@@ -1,5 +1,7 @@
 package previewtemplate.in;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -41,7 +43,7 @@ public class BackToTemplateTest extends BaseClass_Login{
 		LayoutPreview l = new LayoutPreview(driver);
 		l.clickBacktoLayout();
 		Thread.sleep(5000);
-		Assert.assertTrue(l.layoutHeader().contentEquals("Let’s get started, pick a layout"));
+		AssertJUnit.assertTrue(l.layoutHeader().contentEquals("Let’s get started, pick a layout"));
 	}
 
 	private void previewTemplate(String template) throws InterruptedException, IOException {

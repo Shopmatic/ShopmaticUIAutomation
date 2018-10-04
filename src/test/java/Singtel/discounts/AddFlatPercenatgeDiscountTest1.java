@@ -1,5 +1,7 @@
 package Singtel.discounts;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -47,7 +49,7 @@ public class AddFlatPercenatgeDiscountTest1 extends BaseClass_Login{
 		discounts.addDiscountEndDate("31 July 2018");
 		discounts.clickAddADiscountButton();
 		Thread.sleep(2000);
-		Assert.assertTrue(discounts.checkDiscountCreated().contentEquals("You have successfully created Discount"+" "+discountName+"."));
+		AssertJUnit.assertTrue(discounts.checkDiscountCreated().contentEquals("You have successfully created Discount"+" "+discountName+"."));
 		pageBuilderPage.clickDashboard();
 		pageBuilderPage.clickSignOut();
 		pageBuilderPage.clickConfirmSignOut();

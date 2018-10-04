@@ -1,5 +1,7 @@
 package MyShopmatic.IN.customers;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -105,7 +107,7 @@ public class CreateCustomerWithSearchFunctionality extends BaseClass_Login{
 		Navigation.clickNext(driver);
 		Thread.sleep(10000);
 		
-		Assert.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
+		AssertJUnit.assertTrue(Navigation.getTitle(driver).contentEquals("Ready to publish"));
 		
 		ReadyToPublishPage readyToPublishPage = new ReadyToPublishPage(driver);
 		readyToPublishPage.clickPublishSite();
@@ -167,7 +169,7 @@ public class CreateCustomerWithSearchFunctionality extends BaseClass_Login{
 		cust.searchCustomer(cust_email);
 		cust.clickSearchButton();
 		Thread.sleep(5000);
-		Assert.assertTrue(cust.custListSize() ==1);
+		AssertJUnit.assertTrue(cust.custListSize() ==1);
 		Assert.assertTrue(cust.findCustomer(cust_fname));
 	}
 	
